@@ -1,4 +1,3 @@
-
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -66,6 +65,21 @@ ax.grid(show_grid)
 fig.tight_layout()
 st.pyplot(fig)
 
+# Comparison between Spring and Fall terms
+st.subheader("Comparison between Spring and Fall terms")
+st.markdown("This chart shows how the average retention rate differs between Spring and Fall terms over the years.")
+
+df_comparison = df.groupby(["Year", "Term"])["Retention Rate (%)"].mean().reset_index()
+
+fig3, ax3 = plt.subplots(figsize=(8,5))
+sns.barplot(data=df_comparison, x="Year", y="Retention Rate (%)", hue="Term", palette="coolwarm", ax=ax3)
+ax3.set_title("Comparison between Spring and Fall terms")
+ax3.set_xlabel("Year")
+ax3.set_ylabel("Average Retention Rate (%)")
+ax3.legend(title="Term")
+st.pyplot(fig3)
+
+
 # Additional charts in tabs
 tab1, tab2 = st.tabs(["Satisfaction by Year", "Full Dataset"])
 
@@ -80,4 +94,3 @@ with tab2:
     st.dataframe(df, use_container_width=True)
 
 st.caption("Use the controls to explore retention and satisfaction by year or academic term.")
-    
