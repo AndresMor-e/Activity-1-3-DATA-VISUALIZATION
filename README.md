@@ -29,5 +29,5 @@ Build an interactive dashboard using **Streamlit** to explore trends between var
 ## How to Run Locally
 1. Clone this repository:
    ```bash
-   git clone <repo_url>
-   cd <repo_folder>
+   git clone https://github.com/AndresMor-e/Activity-1-3-DATA-VISUALIZATION.git
+   cd Activity-1-3-DATA-VISUALIZATION
