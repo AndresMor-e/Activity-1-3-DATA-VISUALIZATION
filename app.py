@@ -6,6 +6,7 @@ import seaborn as sns
 # General Configuration
 st.set_page_config(page_title="Data Visualization", layout="centered")
 st.title("University Data Dashboard")
+st.markdown("Integrants: Roberto Escobar, Andrés Moreno, Laura Sanchez, Isabella Vega")
 st.markdown("Explore trends in student retention and satisfaction")
 
 # Load dataset
